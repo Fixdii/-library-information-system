@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+}
+
+.button {
+  min-width: 100px;
+  margin: 10px;
+}
+
+.example-button-row{
+  display: flex;
+}

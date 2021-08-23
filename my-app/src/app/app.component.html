@@ -1,0 +1,45 @@
+<header>
+  <mat-tab-group>
+    <mat-tab label="Books"> 
+      <app-books [books]="books"></app-books>
+    </mat-tab>
+    <mat-tab label="Departments">
+      <app-departments [departments]="departments"></app-departments>
+    </mat-tab>
+    <mat-tab label="Katalog">
+      <app-catalog [catalogs]="catalogs"></app-catalog>
+    </mat-tab>
+    <mat-tab label="Subscriber">
+      <app-subscriber [subscribers]="subscribers"></app-subscriber>
+    </mat-tab>
+    <mat-tab label="IssuingBooks">
+      <app-issuing [issuingBooks]="issuingBooks"></app-issuing>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="request">
+          subscribersBook
+        </span>
+      </ng-template>
+      <app-subscribers-books [subscribersBook]="subscribersBook"></app-subscribers-books>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="request">
+          returnDateOfBooks
+        </span>
+      </ng-template>
+      <app-return-date-of-books [returnDateOfBooks]="returnDateOfBooks"></app-return-date-of-books>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="request">
+          booksToBranches
+        </span>
+      </ng-template>
+      <app-books-to-branches [booksToBranches]="booksToBranches"></app-books-to-branches>
+    </mat-tab>
+  </mat-tab-group>
+</header>
+
+ 
