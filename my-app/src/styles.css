@@ -28,3 +28,24 @@ body {
 .request{
   color:red;
 }
+
+td.mat-cell{
+  max-width: 350px;
+  word-break: break-all;
+}
+
+td.mat-cell:first-of-type{
+  width:250px;
+}
+
+td.mat-cell:last-of-type{
+  width:250px;
+}
+
+tr.mat-header-row{
+  text-align-last: center;
+}
+
+tr.mat-row{
+  text-align: center;
+}

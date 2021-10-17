@@ -5,13 +5,13 @@
   
     <!-- issue_code Column -->
     <ng-container matColumnDef="issue_code">
-      <th mat-header-cell *matHeaderCellDef> issue_code </th>
+      <th mat-header-cell *matHeaderCellDef> № </th>
       <td mat-cell *matCellDef="let element"> {{element.issue_code}} </td>
     </ng-container>
   
     <!-- subscriber_code Column -->
     <ng-container matColumnDef="subscriber_code">
-      <th mat-header-cell *matHeaderCellDef> subscriber_code </th>
+      <th mat-header-cell *matHeaderCellDef> id читателя </th>
       <td mat-cell *matCellDef="let element"> {{element.subscriber_code}} </td>
     </ng-container>
   
@@ -23,18 +23,18 @@
 
     <!-- pickup_date Column -->
     <ng-container matColumnDef="pickup_date">
-      <th mat-header-cell *matHeaderCellDef> pickup_date </th>
+      <th mat-header-cell *matHeaderCellDef> Дата выдачи </th>
       <td mat-cell *matCellDef="let element"> {{element.pickup_date}} </td>
     </ng-container>
   
     <!-- return_date Column -->
     <ng-container matColumnDef="return_date">
-      <th mat-header-cell *matHeaderCellDef> return_date </th>
+      <th mat-header-cell *matHeaderCellDef> Дата возврата </th>
       <td mat-cell *matCellDef="let element"> {{element.return_date}} </td>
     </ng-container>
 
     <ng-container matColumnDef="buttons">
-      <th mat-header-cell *matHeaderCellDef style="padding-left: 95px;">Кнопки</th>
+      <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
         <button (click)="delite(element.issue_code)" class="button" mat-flat-button color="primary">
           Удалить

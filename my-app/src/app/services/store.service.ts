@@ -13,6 +13,7 @@ export interface Book {
   name_book: string;
   author: string;
   rack_number: number;
+  src: string;
 }
 
 export interface Department {

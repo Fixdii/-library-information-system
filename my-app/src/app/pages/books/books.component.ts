@@ -27,6 +27,7 @@ export class BooksComponent implements OnInit {
     'name_book',
     'author',
     'rack_number',
+    'src',
     'buttons',
   ];
 
@@ -34,9 +35,7 @@ export class BooksComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    private storeService: StoreService,
     private httpService: HttpService,
-    private cd: ChangeDetectorRef
   ) {}
   ngOnInit(): void {}
 
@@ -60,6 +59,11 @@ export class BooksComponent implements OnInit {
             name: 'Номер стелажа',
             type: 'text',
           },
+          {
+            id: 'src',
+            name: 'Ссылка на картинку',
+            type: 'text'
+          }
         ],
         request: (body) =>
           this.httpService.postBook(body).pipe(
@@ -113,14 +117,21 @@ export class BooksComponent implements OnInit {
             type: 'text',
             value: elem.rack_number,
           },
+          {
+            id: 'src',
+            name: 'Ссылка на картинку',
+            type: 'text',
+            value: elem.src
+          }
         ],
         request: (body) =>
           this.httpService.putBook(body).pipe(
             map((d) => {
               const id = this.books.findIndex(
                 (item) => item.book_code == body.book_code
-              );
+              );              
               const books = [...this.books];
+              console.log(body);
               books[id] = body;
               this.books = books;
               return d;

@@ -26,16 +26,19 @@ export class AppComponent {
     this.httpService.getBooks().subscribe((data: any[]) => {    
       this.books = data;  
       this.storeService.books = data;
+      console.log(data);
     });
 
     this.httpService.getDeportaments().subscribe((data: any[]) => {
       this.departments = data; 
       this.storeService.departments = data;      
+      //console.log(data);
     });
-
+    
     this.httpService.getCatalog().subscribe((data: any[]) => {
       this.catalogs = data;  
-      this.storeService.catalogs = data;      
+      this.storeService.catalogs = data;    
+      //console.log(data);  
     });
 
     this.httpService.getSubscriber().subscribe((data: any[]) => {

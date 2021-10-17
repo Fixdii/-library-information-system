@@ -2,7 +2,8 @@ CREATE TABLE book(
     book_code SERIAL NOT NULL PRIMARY KEY,
     name_book VARCHAR(50) NOT NULL,
     author VARCHAR(50) NOT NULL,
-    rack_number INTEGER
+    rack_number INTEGER,
+    src text NOT NULL DEFAULT 'https://rostislav.kiev.ua/wp-content/uploads/2014/04/kniga.jpg'
 );
 
 
