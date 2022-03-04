@@ -4,8 +4,8 @@ class UserController {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers","origin, content-type, accept");
     res.set('Access-Control-Allow-Credentials', 'true');
-    const { name_book, author, rack_number, src } = req.body;
-    const newBook = await db.query(`INSERT INTO book (book_code,name_book,author,rack_number, src) VALUES ($1, $2, $3, $4, $5) RETURNING *`,[2147483647,name_book, author, rack_number, src]);
+    const {name_book, author, rack_number, src } = req.body;
+    const newBook = await db.query(`INSERT INTO book (name_book,author,rack_number, src) VALUES ($1, $2, $3, $4) RETURNING *`,[name_book, author, rack_number, src]);
     res.json(newBook.rows[0]);
   }
   async getBooks(req,res) {

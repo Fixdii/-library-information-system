@@ -1,0 +1,23 @@
+<div class="paginator">
+    <mat-paginator
+      [length]="length"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="pageSizeOptions"
+      aria-label="Select page"
+      (page)="paginator($event)"
+    ></mat-paginator>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1 p-3 card" *ngFor="let book of books">
+        <a class="bred" href="{{ book.src }}_b.jpg">
+          <img src="{{ book.src }}" title="{{ book.title }}" />       
+        </a>
+        <div>
+          <p>{{book.author}}</p>
+          <p>{{book.name_book}}</p>
+        </div>     
+        <button *ngIf="isAuthorised" [ngClass]="{'btn-primary': mode === 'all', 'btn-danger': mode === 'bookmarks'}" class="btn" (click)="save($event)">{{ mode === 'all' ? 'Добавить в зкладки' : 'Удалить' }}</button>
+    </div>
+  </div>
+  

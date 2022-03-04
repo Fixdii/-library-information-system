@@ -92,8 +92,7 @@ export class HttpService{
     }
     getReturnDateOfBooks(){
         return this.http.get<ReturnDateOfBooks[]>(`http://localhost:8080/api/return_date_of_books`);
-    }
-   
+    }  
    
 
 }

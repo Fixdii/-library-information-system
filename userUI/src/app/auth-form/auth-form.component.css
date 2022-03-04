@@ -1,0 +1,11 @@
+.form-group + .form-group {
+    margin-top: 8px;
+}
+
+button + button {
+    margin-left: 8px;
+}
+
+::ng-deep .cdk-overlay-container {
+    display: flex;
+}

@@ -1,42 +1,42 @@
 CREATE TABLE book(    
-    book_code SERIAL NOT NULL PRIMARY KEY,
-    name_book VARCHAR(50) NOT NULL,
-    author VARCHAR(50) NOT NULL,
-    rack_number INTEGER,
-    src text NOT NULL DEFAULT 'https://rostislav.kiev.ua/wp-content/uploads/2014/04/kniga.jpg'
+book_code SERIAL NOT NULL PRIMARY KEY,
+name_book VARCHAR(50) NOT NULL,
+author VARCHAR(50) NOT NULL,
+rack_number INTEGER,
+src text NOT NULL DEFAULT 'https://rostislav.kiev.ua/wp-content/uploads/2014/04/kniga.jpg'
 );
 
 
 CREATE TABLE katalog(    
-    book_code_branches SERIAL NOT NULL PRIMARY KEY,
-    book_code INTEGER NOT NULL,
-    department_code INTEGER NOT NULL,
-    inventory_number INTEGER NOT NULL,
-    rack_number INTEGER,
-    FOREIGN KEY (book_code)  REFERENCES book (book_code),
-    FOREIGN KEY (department_code)  REFERENCES branch (department_code)
+book_code_branches SERIAL NOT NULL PRIMARY KEY,
+book_code INTEGER NOT NULL,
+department_code INTEGER NOT NULL,
+inventory_number INTEGER NOT NULL,
+rack_number INTEGER,
+FOREIGN KEY (book_code)  REFERENCES book (book_code),
+FOREIGN KEY (department_code)  REFERENCES branch (department_code)
 );
 
 CREATE TABLE branch(    
-    department_code SERIAL NOT NULL PRIMARY KEY,
-    department_name VARCHAR(50) NOT NULL,
-    department_address VARCHAR(100) NOT NULL
+department_code SERIAL NOT NULL PRIMARY KEY,
+department_name VARCHAR(50) NOT NULL,
+department_address VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE issuing_books(    
-    issue_code SERIAL NOT NULL PRIMARY KEY,
-    subscriber_code INTEGER NOT NULL,
-    book_code_branches INTEGER NOT NULL,
-    pickup_date VARCHAR(50) NOT NULL,
-    return_date VARCHAR(50) NOT NULL,
-    FOREIGN KEY (subscriber_code)  REFERENCES subscriber (subscriber_code),
-    FOREIGN KEY (book_code_branches)  REFERENCES katalog (book_code_branches)
+issue_code SERIAL NOT NULL PRIMARY KEY,
+subscriber_code INTEGER NOT NULL,
+book_code_branches INTEGER NOT NULL,
+pickup_date VARCHAR(50) NOT NULL,
+return_date VARCHAR(50) NOT NULL,
+FOREIGN KEY (subscriber_code)  REFERENCES subscriber (subscriber_code),
+FOREIGN KEY (book_code_branches)  REFERENCES katalog (book_code_branches)
 );
 
 CREATE TABLE subscriber(    
-    subscriber_code SERIAL NOT NULL PRIMARY KEY,
-    full_name VARCHAR(50) NOT NULL,
-    library_card INTEGER NOT NULL
+subscriber_code SERIAL NOT NULL PRIMARY KEY,
+full_name VARCHAR(50) NOT NULL,
+d INTEGER NOT NULL
 );
 
 
